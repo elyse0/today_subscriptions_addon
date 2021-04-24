@@ -1,0 +1,21 @@
+for (var i=0;i < youtube.length; i++){
+    if(i!=0)
+        youtube[i].style.visibility='null'
+    
+}
+
+
+for (var i=0;i < youtube.length; i++){
+    if(i!=0)
+        youtube[i].style.display='none'
+    
+}
+
+
+youtube = document.querySelector("ytd-section-list-renderer.style-scope > div:nth-child(2)").childNodes
+
+
+
+borrar = document.querySelector("div.ytd-section-list-renderer:nth-child(3)")
+
+borrar.remove()
