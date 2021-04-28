@@ -9,22 +9,38 @@ function check_tabs(alarmInfo) {
     }, (tabs, error) => {
 
         if (error) {
+
             return Error()
         }
 
-        for (let i = 0; i < tabs.length; i++) {
+        if(!tabs.length){
 
-            browser.tabs.executeScript(tabs[i].id, {
-                file: "scripts/today_subscriptions.js"
-            }, (response, err) => {
-
-                if (err) {
-                    return Error
-                }
-
-                console.log("Script executed")
-            })
+            return Error
         }
+
+        browser.storage.local.get({
+                hide_left_bar: false
+            }, (data, err) => {
+
+                console.log("Hide left bar: " + data.hide_left_bar)
+
+                if(!err){
+
+                    for (let i = 0; i < tabs.length; i++) {
+
+                        if(data.hide_left_bar){
+
+                            browser.tabs.executeScript(tabs[i].id, {
+                                file: "scripts/remove_left_bar.js"})
+                        }
+
+                        browser.tabs.executeScript(tabs[i].id, {
+                            file: "scripts/today_subscriptions.js"
+                        })
+                    }
+                }
+            }
+        )
     })
 }
 

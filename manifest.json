@@ -4,12 +4,18 @@
   "version": "1.0.3",
   "description": "Get only your today's subscriptions on your feed",
   "background": {
-    "scripts": ["youtube_feed.js"]
+    "scripts": [
+      "youtube_feed.js"
+    ]
+  },
+  "options_ui": {
+    "page": "settings/options.html"
   },
   "permissions": [
+    "storage",
     "webNavigation",
     "tabs",
     "alarms",
-    "*://*.youtube.com/feed/subscriptions"
+    "*://www.youtube.com/feed/subscriptions"
   ]
 }

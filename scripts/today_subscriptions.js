@@ -1,12 +1,5 @@
 //console.log("Executing!")
 
-// Remove guide
-guide = document.getElementById("guide")
-if (guide !== null) {
-
-    guide.remove()
-}
-
 // Remove subscribe button
 subscribe_button = document.getElementById("subscribe-button")
 if(subscribe_button !== null){
