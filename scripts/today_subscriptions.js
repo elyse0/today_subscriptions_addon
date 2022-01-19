@@ -30,12 +30,11 @@ for (let i = dayDivisions.length - 1; i >= 0; i--) {
     }
 }
 
-// Show today subscriptions
-thumbnails = document.getElementsByTagName('ytd-grid-video-renderer')
-for (let i = 0; i < thumbnails.length; i++) {
-
-    if(thumbnails[i].childNodes[1].childNodes[0].childNodes[1].childNodes[3].childNodes.length === 2){
-
-        thumbnails[i].hidden = false
+// Show today subscription thumbnails
+todayThumbnails = document.getElementsByTagName('ytd-grid-video-renderer')
+for (let todayThumbnail of todayThumbnails) {
+    // If it hasn't been seen
+    if (todayThumbnail.childNodes[1].childNodes[0].childNodes[1].childNodes[5].childNodes.length === 2) {
+        todayThumbnail.hidden = false
     }
 }
