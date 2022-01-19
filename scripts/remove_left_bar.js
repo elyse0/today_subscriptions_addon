@@ -1,6 +1,5 @@
-// Remove guide
-guide = document.getElementById("guide")
-if (guide !== null) {
-
-    guide.remove()
+// Remove left bar
+leftBar = document.getElementById("guide")
+if (leftBar !== null) {
+    leftBar.remove()
 }
